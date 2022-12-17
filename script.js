@@ -82,15 +82,14 @@ function printStatus(playerScore, computerScore) {
 function game() {
   let playerScore = 0;
   let computerScore = 0;
+  let result;
   for (let i = 0; i < 5; ++i) {
     const PLAYER = getPlayerSelection();
     const COMPUTER = getComputerChoice();
-    if (playRound(PLAYER, COMPUTER).includes("Win")) playerScore++;
-    else if (playRound(PLAYER, COMPUTER).includes("Lost")) computerScore++;
-    console.log(
-      playRound(PLAYER, COMPUTER),
-      "\nScore: " + playerScore + " " + computerScore
-    );
+    result = playRound(PLAYER, COMPUTER);
+    if (result.includes("Win")) playerScore++;
+    else if (result.includes("Lost")) computerScore++;
+    console.log(result, "\nScore: " + playerScore + " " + computerScore);
   }
 
   printStatus(playerScore, computerScore);
