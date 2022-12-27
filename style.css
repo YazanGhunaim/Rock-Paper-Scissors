@@ -1,0 +1,86 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+  font: roboto;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+h1,
+h4 {
+  margin: 0;
+}
+
+h4 {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+button {
+  width: 250px;
+  height: 250px;
+  border-radius: 50px;
+  padding: 25px;
+  margin: 50px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttons img {
+  width: 150px;
+  height: 150px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .score {
+  display: block;
+  margin-top: 55px;
+  font-size: larger;
+}
+
+.score .live-feed {
+  display: inline-flex;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+}
+
+.results {
+  font-size: 50px;
+}
+
+.main .buttons {
+  display: flex;
+  text-align: center;
+  gap: 100px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: white;
+  padding: 1em;
+}
