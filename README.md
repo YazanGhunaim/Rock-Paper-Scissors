@@ -7,9 +7,11 @@ Web implementation of the game.
 
 ## Demo
 After initial UI:
+
 ![Demo of Game](https://github.com/YazanGhunaim/Rock-Paper-Scissors/blob/main/media/demoInitialUI.png)
 
 Before UI:
+
 ![Demo of Game](https://github.com/YazanGhunaim/Rock-Paper-Scissors/blob/main/media/demo.png)
 
 
