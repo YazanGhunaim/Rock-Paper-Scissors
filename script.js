@@ -2,6 +2,9 @@
 // playRound(playerSelection,computerSelection) -> declares winner
 // playerSelectionFunction should be case insensitive
 
+const resultsPanel = document.querySelector(".results");
+const scorePanel = document.querySelector(".live-feed");
+
 function getComputerChoice() {
   const moves = ["rock", "paper", "scissors"];
   return moves[Math.floor(Math.random() * 3) + 1];
@@ -79,20 +82,29 @@ function printStatus(playerScore, computerScore) {
   }
 }
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-  let result;
-  for (let i = 0; i < 5; ++i) {
-    const PLAYER = getPlayerSelection();
-    const COMPUTER = getComputerChoice();
-    result = playRound(PLAYER, COMPUTER);
-    if (result.includes("Win")) playerScore++;
-    else if (result.includes("Lost")) computerScore++;
-    console.log(result, "\nScore: " + playerScore + " " + computerScore);
-  }
+let playerScore = 0;
+let computerScore = 0;
 
-  printStatus(playerScore, computerScore);
+function game(playerInput) {
+  // let playerScore = 0;
+  // let computerScore = 0;
+  let result;
+  const COMPUTER = getComputerChoice();
+  result = playRound(playerInput, COMPUTER);
+  if (result.includes("Win")) playerScore++;
+  else if (result.includes("Lost")) computerScore++;
+  // console.log(result, "\nScore: " + playerScore + " " + computerScore);
+  scorePanel.textContent = playerScore + " " + computerScore;
+  resultsPanel.textContent = result;
+  // }
+
+  // printStatus(playerScore, computerScore);
 }
 
-game();
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    game(button.id);
+  });
+});
+// game();
