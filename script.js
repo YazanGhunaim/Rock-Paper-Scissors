@@ -7,7 +7,7 @@ const scorePanel = document.querySelector(".live-feed");
 
 function getComputerChoice() {
   const moves = ["rock", "paper", "scissors"];
-  return moves[Math.floor(Math.random() * 3) + 1];
+  return moves[Math.floor(Math.random() * moves.length)];
 }
 
 function getPlayerSelection() {
@@ -86,19 +86,13 @@ let playerScore = 0;
 let computerScore = 0;
 
 function game(playerInput) {
-  // let playerScore = 0;
-  // let computerScore = 0;
   let result;
   const COMPUTER = getComputerChoice();
   result = playRound(playerInput, COMPUTER);
   if (result.includes("Win")) playerScore++;
   else if (result.includes("Lost")) computerScore++;
-  // console.log(result, "\nScore: " + playerScore + " " + computerScore);
   scorePanel.textContent = playerScore + " " + computerScore;
   resultsPanel.textContent = result;
-  // }
-
-  // printStatus(playerScore, computerScore);
 }
 
 const buttons = document.querySelectorAll("button");
@@ -107,4 +101,3 @@ buttons.forEach((button) => {
     game(button.id);
   });
 });
-// game();
